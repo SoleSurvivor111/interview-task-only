@@ -1,0 +1,53 @@
+.root {
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: auto;
+  height: 100%;
+  padding: 100px 40px;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #42567A;
+    opacity: 0.1;
+  }
+
+  &::after {
+    left: 0;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    left: 0;
+  }
+
+  &::before {
+    margin: 0 auto;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.title {
+  position: relative;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: #42567A;
+
+  &::before {
+    content: '';
+    left: -45px;
+    top: 10px;
+    position: absolute;
+
+    width: 5px;
+    height: 90%;
+    background: linear-gradient(180deg, #3877EE 0%, #EF5DA8 100%);
+  }
+}
