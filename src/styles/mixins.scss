@@ -1,0 +1,22 @@
+@import 'variables';
+
+// Media mixin for small screens
+@mixin media-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Media mixin for medium screens
+@mixin media-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+// Media mixin for extra-large screens
+@mixin media-xl {
+  @media (max-width: $breakpoint-xl) {
+    @content;
+  }
+}

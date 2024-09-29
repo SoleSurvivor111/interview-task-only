@@ -1,53 +1,99 @@
-.root {
-  margin: 0 auto;
-  max-width: 1440px;
-  min-width: auto;
-  height: 100%;
-  padding: 100px 40px;
-  position: relative;
+@import 'styles/mixins.scss';
 
-  &::before, &::after {
-    content: '';
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  border-right: #42567a10 1px solid;
+  border-left: #42567a10 1px solid;
+  padding: 150px 40px 100px 40px;
+  min-width: auto;
+  max-width: 1440px;
+  min-height: 100%;
+
+  @include media-md {
+    border: none;
+    padding: 50px 20px 50px 20px;
+  }
+
+  &::before,
+  &::after {
     position: absolute;
-    height: 1px;
-    background: #42567A;
     opacity: 0.1;
+    z-index: -1;
+    background: #42567a;
+    height: 1px;
+    content: '';
+
+    @include media-md {
+      display: none;
+    }
   }
 
   &::after {
+    top: 45%;
     left: 0;
-    top: 50%;
-    height: 1px;
+    left: 0;
     width: 100%;
-    left: 0;
+    height: 1px;
   }
 
   &::before {
-    margin: 0 auto;
-    height: 100%;
-    width: 1px;
     top: 0;
     right: 0;
     left: 0;
+    margin: 0 auto;
+    width: 1px;
+    height: 100%;
   }
 }
 
 .title {
-  position: relative;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.2;
+  position: absolute;
+  top: 150px;
+  left: 0;
   margin-bottom: 40px;
-  color: #42567A;
+  padding-left: 45px;
+  color: #42567a;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.2;
+
+  @include media-md {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
 
   &::before {
-    content: '';
-    left: -45px;
-    top: 10px;
     position: absolute;
+    top: 10px;
+    left: 0;
+    background: linear-gradient(180deg, #3877ee 0%, #ef5da8 100%);
 
     width: 5px;
     height: 90%;
-    background: linear-gradient(180deg, #3877EE 0%, #EF5DA8 100%);
+    content: '';
+
+    @include media-md {
+      display: none;
+    }
+  }
+}
+
+.carousel {
+  margin-top: 0;
+}
+
+.slider {
+  margin-top: 50px;
+
+  @include media-md {
+    margin-top: 0;
   }
 }

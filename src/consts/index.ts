@@ -19,7 +19,7 @@ export const data = decades.map(
           ({
             id: faker.string.uuid(),
             date: faker.date.between(decade).getFullYear(),
-            description: faker.lorem.sentence(),
+            description: faker.lorem.sentence(12),
           }) as const
       ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()),
     }) as const
