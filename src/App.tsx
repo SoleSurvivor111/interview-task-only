@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { HistoricalDatesSlider } from './components/historical-dates-slider'
-
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import * as s from './App.module.scss'
+import React, { useState } from 'react'
 import { CircularCarousel } from './components/circular-carousel'
+import { HistoricalDatesSlider } from './components/historical-dates-slider'
 import { data } from './consts'
+
+import * as s from './App.module.scss'
 
 const App = () => {
   const [periodIndex, setPeriodIndex] = useState(0)

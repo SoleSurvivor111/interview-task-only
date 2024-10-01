@@ -1,9 +1,7 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import CopyPlugin from 'copy-webpack-plugin'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -26,21 +24,6 @@ export default {
         exclude: /node_modules/,
       },
       {
-        test: /\.(sc|sa|c)ss$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[folder]__[local]--[hash:base64:5]',
-              },
-            },
-          },
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.svg$/i,
         type: 'asset',
         resourceQuery: /url/, // *.svg?url
@@ -56,6 +39,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
+      inject: true,
     }),
     new ForkTsCheckerWebpackPlugin(),
     // new CopyPlugin({

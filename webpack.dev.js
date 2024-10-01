@@ -9,4 +9,24 @@ export default merge(common, {
     hot: true, // Enables hot module replacement
     port: 3000, // Use any port you prefer
   },
+  module: {
+    rules: [
+      // CSS loader
+      {
+        test: /\.(sc|sa|c)ss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[folder]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+    ],
+  },
 })

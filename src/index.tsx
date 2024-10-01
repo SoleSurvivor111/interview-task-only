@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'reset-css'
+import 'reset-css/sass/_reset.scss'
 import App from './App'
 import './index.module.scss'
 
