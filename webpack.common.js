@@ -15,6 +15,7 @@ export default {
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.jsx'],
+    mainFields: ['browser', 'module', 'main'],
   },
   module: {
     rules: [
